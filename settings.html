@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SaaS Retention & Revenue Tracker</title>
+    
+    <!-- React & ReactDOM -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --bg-dark: #0f111a;
+            --bg-card: #1a1d2d;
+            --bg-card-hover: #22263a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-growth: #39ff14;
+            --accent-leakage: #ff073a;
+            --accent-primary: #0ea5e9;
+            --border-color: #2d3748;
+        }
+    }
+
+    @layer base {
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    }
+
+    @layer components {
+        .card {
+            @apply bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-6 transition-all duration-200;
+        }
+        .btn-primary {
+            @apply bg-[var(--accent-primary)] text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors;
+        }
+        .input-field {
+            @apply w-full bg-[#0f111a] border border-[var(--border-color)] rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[var(--accent-primary)] transition-colors;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Scripts -->
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="components/Settings.js"></script>
+    <script type="text/babel" src="settings-app.js"></script>
+</body>
+</html>
