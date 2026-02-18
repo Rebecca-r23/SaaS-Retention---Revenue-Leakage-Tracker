@@ -4,7 +4,7 @@ This SaaS Analytics Dashboard is a comprehensive data visualization tool designe
 
 A comprehensive, data-driven dashboard designed for SaaS companies to monitor **Revenue Retention**, **Churn Analysis**, and **MRR Movements**. This project provides actionable insights into customer lifecycles and revenue leakage.
 
-![Dashboard Overview](link_to_your_main_screenshot)
+![Retention & Revenue Overview](Screenshot 2026-02-18 111554.png)
 
 ## 📊 Key Features
 
