@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Retention & Revenue Tracker</title>
+    <meta name="description" content="A high-end SaaS dashboard for tracking retention, revenue leakage, and MRR movements.">
+    <meta name="keywords" content="SaaS, Dashboard, Analytics, MRR, Churn, Retention, Tableau style">
+    
+    <!-- React & ReactDOM -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+
+    <script>
+        // Initialize Chart.js to avoid conflicts
+        window.ChartJS = window.Chart;
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --bg-dark: #0f111a;
+            --bg-card: #1a1d2d;
+            --bg-card-hover: #22263a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-growth: #39ff14; /* Neon Green */
+            --accent-leakage: #ff073a; /* Neon Red */
+            --accent-primary: #0ea5e9; /* Sky Blue */
+            --border-color: #2d3748;
+        }
+    }
+
+    @layer base {
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    }
+
+    @layer components {
+        .card {
+            @apply bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-6 transition-all duration-200;
+        }
+        .card:hover {
+            @apply border-[var(--text-secondary)] shadow-lg shadow-black/20;
+        }
+        .neon-text-green {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+            color: var(--accent-growth);
+        }
+        .neon-text-red {
+            text-shadow: 0 0 10px rgba(255, 7, 58, 0.5);
+            color: var(--accent-leakage);
+        }
+    }
+
+    @layer utilities {
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Scripts -->
+    <script type="text/babel" src="utils/dataGenerator.js"></script>
+    <script type="text/babel" src="utils/metrics.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="components/KPIGrid.js"></script>
+    <script type="text/babel" src="components/CohortAnalysis.js"></script>
+    <script type="text/babel" src="components/MRRWaterfall.js"></script>
+    <script type="text/babel" src="components/RevenueLeakage.js"></script>
+    <script type="text/babel" src="components/Dashboard.js"></script>
+    <script type="text/babel" src="app.js"></script>
+    <!-- Preload Settings for caching -->
+    <link rel="prefetch" href="settings.html" />
+</body>
+</html>
